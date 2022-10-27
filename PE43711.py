@@ -4,7 +4,6 @@ import time
 # Declare the pin number
 PIN_HIGH = 0
 P_or_S = 26
-
 OPT = 19
 D0 = 22
 D1 = 10
@@ -35,15 +34,32 @@ print("Initial setup complete")
 GPIO.output(P_or_S, GPIO.LOW)
 GPIO.output(OPT, GPIO.LOW)
 while (True):
-    PIN_HIGH = input("PIN Number to set HIGH: ")
-    GPIO.output(PIN_HIGH, GPIO.HIGH)
-    
-    if PIN_HIGH == "out":
+    PIN_HIGH = int(input("PIN Number to set HIGH: "))
+    if PIN_HIGH == 0:
+        PIN_HIGH = 22
+    elif PIN_HIGH == 1:
+        PIN_HIGH = 10
+    elif PIN_HIGH == 2:
+        PIN_HIGH = 9
+    elif PIN_HIGH == 3:
+        PIN_HIGH = 11
+    elif PIN_HIGH == 4:
+        PIN_HIGH = 0        
+    elif PIN_HIGH == 5:
+        PIN_HIGH = 5
+    elif PIN_HIGH == 6:
+        PIN_HIGH = 6        
+    elif PIN_HIGH == 7:
+        PIN_HIGH = 13
+    else:
         for pin in pins:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-            print("Done.")
-        break
-
+            print("GPIO"+str(pin)+"Down.")
+        print("All Done")
+        break        
+    GPIO.output(PIN_HIGH, GPIO.HIGH)
+    print("GPIO "+str(PIN_HIGH)+" set HIGH")
+    
 
 
 
