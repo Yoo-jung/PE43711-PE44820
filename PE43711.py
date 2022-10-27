@@ -36,20 +36,36 @@ GPIO.output(OPT, GPIO.LOW)
 while (True):
     PIN_HIGH = int(input("PIN Number to set HIGH: "))
     if PIN_HIGH == 0:
+        for pin in pins:
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH = 22
     elif PIN_HIGH == 1:
+        for pin in pins:
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH = 10
     elif PIN_HIGH == 2:
+        for pin in pins:
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH = 9
     elif PIN_HIGH == 3:
+        for pin in pins:
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH = 11
     elif PIN_HIGH == 4:
+        for pin in pins:
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH = 0        
     elif PIN_HIGH == 5:
+        for pin in pins:
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH = 5
     elif PIN_HIGH == 6:
+        for pin in pins:
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH = 6        
     elif PIN_HIGH == 7:
+        for pin in pins:
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH = 13
     else:
         for pin in pins:
