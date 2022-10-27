@@ -50,7 +50,6 @@ print("Initial setup complete")
 GPIO.output(P_or_S, GPIO.LOW)
 GPIO.output(OPT, GPIO.LOW)
 while (True):
-    <<<<<<< HEAD
     PIN_HIGH_P = int(input("PIN Number of PS to set HIGH: "))
     PIN_HIGH_A = int(input("PIN Number of dB to set HIGH: "))
     
@@ -234,62 +233,11 @@ while (True):
         for pin in pins_P:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         for pin in pins_P_A:
-=======
-    PIN_HIGH = int(input("PIN Number to set HIGH: "))
-    if PIN_HIGH == 0:
-        for pin in pins:
-            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        PIN_HIGH = 22
-    elif PIN_HIGH == 1:
-        for pin in pins:
-            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        PIN_HIGH = 10
-    elif PIN_HIGH == 2:
-        for pin in pins:
-            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        PIN_HIGH = 9
-    elif PIN_HIGH == 3:
-        for pin in pins:
-            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        PIN_HIGH = 11
-    elif PIN_HIGH == 4:
-        for pin in pins:
-            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        PIN_HIGH = 0        
-    elif PIN_HIGH == 5:
-        for pin in pins:
-            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        PIN_HIGH = 5
-    elif PIN_HIGH == 6:
-        for pin in pins:
-            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        PIN_HIGH = 6        
-    elif PIN_HIGH == 7:
-        for pin in pins:
-            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        PIN_HIGH = 13
-    else:
-        for pin in pins:
->>>>>>> 8d9a8951afe8e075987ff71138ad46e856670016
-            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-            print("GPIO"+str(pin)+"Down.")
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)            
         print("All Done")
-        break        
-<<<<<<< HEAD
+        break  
     
+
     GPIO.output(PIN_HIGH_P, GPIO.HIGH)
-    print("GPIO "+str(PIN_HIGH_P)+" set HIGH")
-=======
-    GPIO.output(PIN_HIGH, GPIO.HIGH)
-    print("GPIO "+str(PIN_HIGH)+" set HIGH")
-    
-
-
-
-#GPIO.setup(gpio_num, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-#GPIO.setup(gpio_num, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-
-
-# reset
-#GPIO.cleanup()
->>>>>>> 8d9a8951afe8e075987ff71138ad46e856670016
+    GPIO.output(PIN_HIGH_A, GPIO.HIGH)
+    print("GPIO "+str(PIN_HIGH_P)+" & "+str(PIN_HIGH_A)+" set HIGH")
