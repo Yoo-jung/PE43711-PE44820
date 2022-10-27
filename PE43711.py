@@ -1,5 +1,3 @@
-from locale import ABMON_10
-from re import A
 import RPi.GPIO as GPIO
 import time
 
@@ -27,7 +25,7 @@ A4 = 24
 A5 = 25
 A6 = 8
 LE = 7
-pins_P_A = [A0, A1, A2, A3, A4, A5, A6]
+pins_A = [A0, A1, A2, A3, A4, A5, A6]
 # Set GPIO mode
 #라즈베리파이 핀 번호를 GPIO 번호로 사용
 #GPIO.setmode(GPIO.BOARD)
@@ -41,7 +39,7 @@ GPIO.setup(LE, GPIO.OUT, initial=GPIO.HIGH)
 
 for pin in pins_P:
     GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-for pin in pins_P_A:
+for pin in pins_A:
     GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
 time.sleep(2)
 print("Initial setup complete")
@@ -56,7 +54,7 @@ while (True):
     if PIN_HIGH_P == 0:
         for pin in pins_P:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        for pin in pins_P_A:
+        for pin in pins_A:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH_P = 22
         
@@ -78,7 +76,7 @@ while (True):
     elif PIN_HIGH_P == 1:
         for pin in pins_P:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        for pin in pins_P_A:
+        for pin in pins_A:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH_P = 10
         
@@ -100,7 +98,7 @@ while (True):
     elif PIN_HIGH_P == 2:
         for pin in pins_P:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        for pin in pins_P_A:
+        for pin in pins_A:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH_P = 9
         
@@ -122,7 +120,7 @@ while (True):
     elif PIN_HIGH_P == 3:
         for pin in pins_P:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        for pin in pins_P_A:
+        for pin in pins_A:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH_P = 11
         
@@ -144,7 +142,7 @@ while (True):
     elif PIN_HIGH_P == 4:
         for pin in pins_P:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        for pin in pins_P_A:
+        for pin in pins_A:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH_P = 0       
         
@@ -166,7 +164,7 @@ while (True):
     elif PIN_HIGH_P == 5:
         for pin in pins_P:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        for pin in pins_P_A:
+        for pin in pins_A:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH_P = 5
         
@@ -188,7 +186,7 @@ while (True):
     elif PIN_HIGH_P == 6:
         for pin in pins_P:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        for pin in pins_P_A:
+        for pin in pins_A:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH_P = 6   
         
@@ -210,7 +208,7 @@ while (True):
     elif PIN_HIGH_P == 7:
         for pin in pins_P:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        for pin in pins_P_A:
+        for pin in pins_A:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         PIN_HIGH_P = 13
         
@@ -232,7 +230,7 @@ while (True):
     else:
         for pin in pins_P:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-        for pin in pins_P_A:
+        for pin in pins_A:
             GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)            
         print("All Done")
         break  
