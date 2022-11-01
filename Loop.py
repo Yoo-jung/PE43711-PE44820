@@ -52,9 +52,7 @@ GPIO.output(OPT, GPIO.LOW)
 print("Start to control GPIO")
 
 for PIN_HIGH_P in range(0, 6, 1):
-    time.sleep(5)
-    print(PIN_HIGH_P)
-    
+    #print(PIN_HIGH_P)    
     if PIN_HIGH_P == 0:
         PIN_HIGH_P = 22
     elif PIN_HIGH_P == 1:
@@ -73,6 +71,7 @@ for PIN_HIGH_P in range(0, 6, 1):
         PIN_HIGH_P = 13
         
     for PIN_HIGH_A in range(0, 6, 1):
+        #print(PIN_HIGH_A)  
         if PIN_HIGH_A == 0:
             PIN_HIGH_A = 14
         elif PIN_HIGH_A == 1:
@@ -87,12 +86,14 @@ for PIN_HIGH_P in range(0, 6, 1):
             PIN_HIGH_A = 25
         elif PIN_HIGH_A == 6:
             PIN_HIGH_A = 8
-    
-    for pin in pins_P:
-        GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
-    for pin in pins_A:
-        GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
         
-    GPIO.output(PIN_HIGH_P, GPIO.HIGH)
-    GPIO.output(PIN_HIGH_A, GPIO.HIGH)
-    print("GPIO "+str(PIN_HIGH_P)+" & "+str(PIN_HIGH_A)+" set HIGH")
+        time.sleep(5)
+        for pin in pins_P:
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
+        for pin in pins_A:
+            GPIO.setup(pin, GPIO.OUT, initial=GPIO.LOW)
+            
+        GPIO.output(PIN_HIGH_P, GPIO.HIGH)
+        GPIO.output(PIN_HIGH_A, GPIO.HIGH)
+        print("GPIO "+str(PIN_HIGH_P)+" & "+str(PIN_HIGH_A)+" set HIGH")
+  
